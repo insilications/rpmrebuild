@@ -1,0 +1,17 @@
+unset DBUS_SESSION_BUS_ADDRESS
+unset CFLAGS
+unset CXXFLAGS
+unset FFLAGS
+unset FCFLAGS
+unset LDFLAGS
+unset ASMFLAGS
+unset LIBS
+unset LD_LIBRARY_PATH
+unset LIBRARY_PATH
+export FAKECHROOT_EXCLUDE_PATH=/var/tmp/pgo
+make -j1 check V=1 VERBOSE=1 || :
+# pushd tests/
+# make populate_testing
+# ./rpmtests
+# popd
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus

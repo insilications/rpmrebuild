@@ -1,0 +1,13 @@
+# This file contains recursive sources that require this package
+createrepo_c
+createrepo_c-dev
+diffoscope
+koji
+libdnf
+libdnf-dev
+libmodulemd
+libmodulemd-dev
+libsolv
+patchutils
+rpm-dev
+rpm-staticdev
