@@ -1,5 +1,5 @@
 PKG_NAME := rpmrebuild
-URL = http://downloads.sourceforge.net/rpmrebuild/rpmrebuild-2.16.tar.gz
+URL = https://sourceforge.net/projects/rpmrebuild/files/rpmrebuild/2.16/rpmrebuild-2.16.tar.gz/download
 ARCHIVES = 
 ARCHIVES_GIT = 
 
