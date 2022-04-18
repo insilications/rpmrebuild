@@ -1,5 +1,5 @@
 PKG_NAME := rpmrebuild
-URL = https://sourceforge.net/projects/rpmrebuild/files/rpmrebuild/2.16/rpmrebuild-2.16.tar.gz/download
+URL = file:///aot/build/clearlinux/packages/rpmrebuild/rpmrebuild-v2.16.tar.gz
 ARCHIVES = 
 ARCHIVES_GIT = 
 

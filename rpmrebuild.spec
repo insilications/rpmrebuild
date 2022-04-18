@@ -5,9 +5,9 @@
 %define keepstatic 1
 Name     : rpmrebuild
 Version  : 2.16
-Release  : 776
-URL      : https://phoenixnap.dl.sourceforge.net/project/rpmrebuild/rpmrebuild/2.16/rpmrebuild-2.16.tar.gz
-Source0  : https://phoenixnap.dl.sourceforge.net/project/rpmrebuild/rpmrebuild/2.16/rpmrebuild-2.16.tar.gz
+Release  : 781
+URL      : file:///aot/build/clearlinux/packages/rpmrebuild/rpmrebuild-v2.16.tar.gz
+Source0  : file:///aot/build/clearlinux/packages/rpmrebuild/rpmrebuild-v2.16.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -195,8 +195,8 @@ man components for the rpmrebuild package.
 
 
 %prep
-%setup -q -c -n rpmrebuild-2.16.tar
-cd %{_builddir}/rpmrebuild-2.16.tar
+%setup -q -n rpmrebuild
+cd %{_builddir}/rpmrebuild
 
 %build
 unset http_proxy
@@ -204,7 +204,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1646648550
+export SOURCE_DATE_EPOCH=1650286516
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -270,11 +270,13 @@ export QT_FONT_DPI=88
 export GTK_USE_PORTAL=1
 export DESKTOP_SESSION=plasma
 ## altflags1 end
+pushd src
 make  %{?_smp_mflags}    V=1 VERBOSE=1
+popd
 
 
 %install
-export SOURCE_DATE_EPOCH=1646648550
+export SOURCE_DATE_EPOCH=1650286516
 rm -rf %{buildroot}
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -341,7 +343,9 @@ export QT_FONT_DPI=88
 export GTK_USE_PORTAL=1
 export DESKTOP_SESSION=plasma
 ## altflags1 end
+pushd src
 %make_install
+popd
 
 %files
 %defattr(-,root,root,-)
